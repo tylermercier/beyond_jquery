@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>Runner</title>
+    <script type="text/javascript" src="lib/underscore/underscore.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="src/profiler.js"></script>
+    <script type="text/javascript" src="src/class.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+		Profiler.run("fibonacci", function () {
+			console.log(fibonacci(30));
+		});
+
+		Profiler.run("fastFibonacci", function () {
+			console.log(fastFibonacci(3000));
+		});
+    </script>
+  </body>
+</html>
