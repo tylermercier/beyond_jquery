@@ -1,16 +1,10 @@
-/*
-  Written much like a pseudo code. Not tested.
-
-  Need to use prototype
-*/
-
-var Paginator = function(element, items, pageSize, next, previous, render){
+var Paginator = function(element, items, pageSize, next, previous, renderer){
 
   this.element = element;
   this.items = items,
   this.next = next;
   this.previous = previous,
-  this.render = render;
+  this.renderer = renderer;
   this.pageSize = pageSize;
 
   var showPage = function(pageNumber){
@@ -20,7 +14,7 @@ var Paginator = function(element, items, pageSize, next, previous, render){
     element.empty();
 
     for(var i = startIndex; i < endIndex; i++){
-      element.append(render(items[i]));
+      element.append(renderer.render(items[i]));
     }
 
     updateNav(previous,  pageNumber > 1,                         pageNumber - 1);

@@ -65,17 +65,3 @@ var photos = [
     ]
   }
 ];
-
-var tagBuilder = function(tags) {
-  return tags.join(', ');
-};
-var template = $.trim($('#content-template').html());
-
-var render = function(photo){
-  var photo = template
-    .replace(/{{title}}/ig, photo.title)
-    .replace(/{{caption}}/ig, photo.caption)
-    .replace(/{{tags}}/ig, tagBuilder(photo.tags))
-    .replace(/{{url}}/ig, photo.image.url);
-  return photo;
-};

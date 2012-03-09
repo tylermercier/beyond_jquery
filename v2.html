@@ -53,11 +53,13 @@
 
     <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="lib/data.js"></script>
-    <script type="text/javascript" src="lib/paginator.js"></script>
+    <script type="text/javascript" src="src/data.js"></script>
+    <script type="text/javascript" src="src/renderer.js"></script>
+    <script type="text/javascript" src="src/v2/paginator.js"></script>
 
     <script type="text/javascript">
-      var paginator = new Paginator($('div.photos'), photos, 4, $('#next'), $('#previous'), render);
+      var renderer = new CustomTemplateRenderer($('#content-template'));
+      var paginator = new Paginator($('div.photos'), photos, 4, $('#next'), $('#previous'), renderer);
     </script>
   </body>
 </html>

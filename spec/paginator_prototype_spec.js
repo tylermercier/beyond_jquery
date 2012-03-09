@@ -1,9 +1,10 @@
-describe("Player", function() {
-  var player;
-  var song;
+describe("Paginator", function() {
+  var paginator;
+  var items;
 
   beforeEach(function() {
-    player = new Player();
+    items = [1, 2, 3, 4, 5]
+    paginator = new Pagintor();
     song = new Song();
   });
 

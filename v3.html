@@ -33,7 +33,7 @@
     Header
   </header>
 
-  <div class="photos">
+  <div id="photos" class="photos">
     <script id="content-template" type="example/template">
       <div class="photo">
         <img src="{{url}}" alt="{{title}}" />
@@ -42,22 +42,53 @@
       </div>
     </script>
   </div>
+
   <div class="clearfix"></div>
   <button id="previous" class="btn">Previous</button>
   <button id="next" class="btn">Next</button>
+
+  <div id="other-photos" class="photos">
+  </div>
+  <div class="clearfix"></div>
+  <button id="other-previous" class="btn">Previous</button>
+  <button id="other-next" class="btn">Next</button>
+
 
   <footer class="footer">
     Footer
   </footer>
   </div>
-
-    <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="lib/data.js"></script>
-    <script type="text/javascript" src="lib/paginator_prototype.js"></script>
+    <script type="text/javascript" src="lib/underscore/underscore.js"></script>
+    <script type="text/javascript" src="src/data.js"></script>
+    <script type="text/javascript" src="src/renderer.js"></script>
+    <script type="text/javascript" src="src/v3/paginator.js"></script>
 
     <script type="text/javascript">
-      var paginator = new Paginator($('div.photos'), photos, 4, $('#next'), $('#previous'), render);
+      var renderer = new CustomTemplateRenderer($('#content-template'));
+
+      var paginator = new Paginator({
+        element: $('div#photos'),
+        items: photos,
+        next: $('#next'),
+        previous: $('#previous'),
+        renderer: renderer,
+        pageSize: 4
+      });
+      paginator.showPage(1);
+
+
+      var otherPaginator = new Paginator({
+        element: $('div#other-photos'),
+        items: photos,
+        next: $('#other-next'),
+        previous: $('#other-previous'),
+        renderer: renderer,
+        pageSize: 2
+      });
+      otherPaginator.showPage(1);
+
+
     </script>
   </body>
 </html>
