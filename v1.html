@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>TODO</title>
+    <title>Procedural</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -39,7 +39,7 @@
         <img src="{{url}}" alt="{{title}}" />
         <p>{{caption}}</p>
         <p>{{tags}}</p>
-      </div>        
+      </div>
     </script>
   </div>
   <div class="clearfix"></div>
@@ -53,80 +53,10 @@
 
     <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="lib/data.js"></script>
     <script type="text/javascript">
-    var photos = [
-      {
-        caption: "pickled fruit",
-        image: {
-          url: "pictures/001.jpg"
-        },
-        tags: [
-          "food",
-          "fruit",
-          "jamming"
-        ]
-      },
-      {
-        caption: "bbq weiners",
-        image: {
-          url: "pictures/002.jpg"
-        },
-        tags: [
-          "bbq",
-          "hot dogs"
-        ]
-      },
-      {
-        caption: "power lines",
-        image: {
-          url: "pictures/003.jpg"
-        },
-        tags: [
-          "sky",
-          "farming",
-          "landscape",
-          "green"
-        ]
-      },
-      {
-        caption: "blue flower",
-        image: {
-          url: "pictures/004.jpg"
-        },
-        tags: [
-          "green",
-          "flower"
-        ]
-      }
-      ,{
-        caption: "lake sunset",
-        image: {
-          url: "pictures/005.jpg"
-        },
-        tags: [
-          "lake",
-          "sunset",
-          "boating"
-        ]
-      },
-      {
-        caption: "old car",
-        image: {
-          url: "pictures/006.jpg"
-        },
-        tags: [
-          "old",
-          "classic",
-          "car"
-        ]
-      }
-    ];
 
-    var template = $.trim($('#content-template').html());
     var photos_element = $('div.photos');
-    var tagBuilder = function(tags) {
-      return tags.join(', ');
-    };
 
     var offset = 0;
     var imageLimit = 4;
@@ -137,13 +67,7 @@
       var end = offset + imageLimit;
       end = Math.min(photos.length, end);
       for (i=offset; i<end; i++) {
-        var photo = photos[i]; // show how this isn't scoped as expected
-        var temp = template
-          .replace(/{{title}}/ig, photo.title)
-          .replace(/{{caption}}/ig, photo.caption)
-          .replace(/{{tags}}/ig, tagBuilder(photo.tags))
-          .replace(/{{url}}/ig, photo.image.url);
-        photos_element.append(temp);
+        photos_element.append(render(photos[i]));
       };
 
       updateButtons();
