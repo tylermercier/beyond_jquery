@@ -1,14 +1,14 @@
-var Gallery = Gallery || {}
+var Gallery = Gallery || {};
 
 Gallery.Paginator = (function(){
 
-  function Paginator(dependencies){
+  function MyPaginator(dependencies){
     //...
   }
 
-  Paginator.prototype.someFunction = function(){
+  MyPaginator.prototype.someFunction = function(){
     // some code
   }
 
-  return Paginator;
+  return MyPaginator;
 })();

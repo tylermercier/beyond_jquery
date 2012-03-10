@@ -12,9 +12,10 @@ Paginator.prototype.reload = function(items){
 
 Paginator.prototype.onNavButtonClick = function($element) {
   var context = this;
-  $element.live('click', function(){
+  $element.live('click', function(e){
     var pageToShow = parseInt( $( this )[0].dataset.page );
     context.showPage(pageToShow);
+    e.preventDefault();
   });
 }
 

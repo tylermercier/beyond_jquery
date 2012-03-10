@@ -1,4 +1,4 @@
-var paginator = new Paginator(
+var paginator = Paginator(
   $('div#photos'),
   photos,
   3,

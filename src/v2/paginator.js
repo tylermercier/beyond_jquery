@@ -1,13 +1,5 @@
 var Paginator = function(element, items, pageSize, next, previous, renderer, footer){
 
-  this.element = element;
-  this.items = items,
-  this.next = next;
-  this.previous = previous,
-  this.renderer = renderer;
-  this.pageSize = pageSize;
-  this.footer = footer;
-
   var showPage = function(pageNumber){
     var startIndex = (pageNumber - 1) * pageSize;
     var endIndex = Math.min(startIndex + pageSize, items.length);
@@ -24,7 +16,7 @@ var Paginator = function(element, items, pageSize, next, previous, renderer, foo
     
     updateNav(previous,  pageNumber > 1,                         pageNumber - 1);
     updateNav(next,      (pageNumber * pageSize) < items.length, pageNumber + 1);
-  }
+  };
 
   function updateNav(nav, condition, page){
     if(condition){
@@ -36,14 +28,17 @@ var Paginator = function(element, items, pageSize, next, previous, renderer, foo
     }
   }
 
-  this.next.live('click', function(){
+  next.live('click', function(e){
     showPage(parseInt($(this)[0].dataset.page));
+    e.preventDefault();
   });
 
-  this.previous.live('click', function(){
+  previous.live('click', function(e){
     showPage(parseInt($(this)[0].dataset.page));
+    e.preventDefault();
   });
 
-  showPage(1);
-
+  return {
+    showPage: showPage
+  };
 }

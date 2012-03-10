@@ -1,10 +1,10 @@
 var paginator = new Paginator({
   element: $('div#photos'),
   items: photos,
+  pageSize: 3,
   next: $('#next'),
   previous: $('#previous'),
   renderer: renderer,
-  pageSize: 3,
   footer: '<div class="clearFix"></div>'
 });
 paginator.showPage(1);
