@@ -23,3 +23,5 @@ CustomTemplateRenderer.prototype.render = function(photo) {
     .replace(/{{tags}}/ig, this.buildTagLinks(photo.tags))
     .replace(/{{url}}/ig, photo.image.url);
 };
+
+var renderer = new CustomTemplateRenderer($('#content-template'));

@@ -23,15 +23,6 @@
 
   <div class="photos-container">
     <div id="photos" class="photos">
-      <script id="content-template" type="example/template">
-        <div class="photo">
-          <figure>
-            <img src="{{url}}" alt="{{title}}" />
-            <figcaption>{{caption}}</figcaption>
-          </figure>
-          <p>Tags: {{tags}}</p>
-        </div>
-      </script>
     </div>
     <div class="clearfix"></div>
     <div class="buttons">
@@ -54,12 +45,19 @@
     <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
     <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="src/photo_collection.js"></script>
+    <script id="content-template" type="example/template">
+        <div class="photo">
+          <figure>
+            <img src="{{url}}" alt="{{title}}" />
+            <figcaption>{{caption}}</figcaption>
+          </figure>
+          <p>Tags: {{tags}}</p>
+        </div>
+      </script>
     <script type="text/javascript" src="src/renderer.js"></script>
     <script type="text/javascript" src="src/v3/paginator.js"></script>
 
     <script type="text/javascript">
-      var renderer = new CustomTemplateRenderer($('#content-template'));
-
       var paginator = new Paginator({
         element: $('div#photos'),
         items: photos,
