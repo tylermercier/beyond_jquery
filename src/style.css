@@ -1,0 +1,36 @@
+body{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 5%;
+}
+
+.photos-container{
+  width: 100%;
+  text-align: center;
+}
+
+.photos {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.photo {
+  width: 25%;
+  float: left;
+}
+
+.buttons{
+  width: 100%;
+  text-align: center;
+}
+
+#tag-info {
+  display: none;
+}
+
+#tag-name{
+  color: #08C;
+}

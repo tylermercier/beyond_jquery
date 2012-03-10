@@ -5,6 +5,11 @@ var Paginator = function(dependencies){
   this.onNavButtonClick(this.previous);
 }
 
+Paginator.prototype.reload = function(items){
+  this.items = items;
+  this.showPage(1);
+}
+
 Paginator.prototype.onNavButtonClick = function($element) {
   var context = this;
   $element.live('click', function(){
