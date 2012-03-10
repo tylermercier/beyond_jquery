@@ -9,8 +9,17 @@
   </head>
   <body>
     <script type="text/javascript">
-		new Animal('critter').run();
-		new Rabbit('jack rabbit').run();
+      var animal = new Animal('critter');
+      animal.run();
+      var rabbit = new Rabbit('jack rabbit');
+      rabbit.run();
+      
+      var simpleObject = Object.create({
+        print: function () { console.log("I'm a simple object!"); }
+      });
+
+      console.log(rabbit);
+      console.log(simpleObject);
     </script>
   </body>
 </html>

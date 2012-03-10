@@ -1,13 +1,52 @@
-function extend(Child, Parent) {
-	Child.prototype = inherit(Parent.prototype);
+function extendEx(Child, Parent) {
+	Child.prototype = inheritEx(Parent.prototype);
 	Child.prototype.constructor = Child;
 	Child.parent = Parent.prototype;
 }
 
-function inherit(proto) {
+function inheritEx(proto) {
 	function F() {};
 	F.prototype = proto;
 	return new F;
+}
+
+if(typeof Object.create !== "function") {
+  Object.create = function (o) {
+    function F() {}
+    F.prototype = o;
+    return new F();
+  };
+}
+
+function extend(obj, props) {
+  for(prop in props) {
+    if(props.hasOwnProperty(prop)) {
+      obj[prop] = props[prop];
+    }
+  }
+}
+
+function New (f) {
+	// Create the instance of the class.
+	var n = { '__proto__': f.prototype };
+	return function () {
+		// Initialize the instance.
+		f.apply(n, arguments);
+		// Return the instance
+		return n;
+	};
+}
+
+function getProperty(obj, prop) {
+  if (obj.hasOwnProperty(prop)) {
+    return obj[prop];
+  }
+  else if (obj.__proto__ !== null) {
+    return getProperty(obj.__proto__, prop);
+  }
+  else {
+    return undefined;
+  }
 }
 
 // Animal class
@@ -27,7 +66,7 @@ function Rabbit(name) {
 }
 
 // inherit
-extend(Rabbit, Animal);
+extendEx(Rabbit, Animal);
 
 // override
 Rabbit.prototype.run = function() {
