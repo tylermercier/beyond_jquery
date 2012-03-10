@@ -1,7 +1,7 @@
 var photos_element = $('div.photos');
 
 var offset = 0;
-var imageLimit = 4;
+var imageLimit = 3;
 
 function showPictures() {
   $('div.photos').empty();
