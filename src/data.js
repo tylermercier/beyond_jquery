@@ -7,7 +7,8 @@ var photos = [
     tags: [
       "food",
       "fruit",
-      "jamming"
+      "jamming",
+      "beautiful"
     ]
   },
   {
@@ -29,7 +30,8 @@ var photos = [
       "sky",
       "farming",
       "landscape",
-      "green"
+      "green",
+      "beautiful"
     ]
   },
   {
@@ -39,7 +41,8 @@ var photos = [
     },
     tags: [
       "green",
-      "flower"
+      "flower",
+      "beautiful"
     ]
   }
   ,{
@@ -50,7 +53,8 @@ var photos = [
     tags: [
       "lake",
       "sunset",
-      "boating"
+      "boating",
+      "beautiful"
     ]
   },
   {
