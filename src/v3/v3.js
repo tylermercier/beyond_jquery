@@ -1,4 +1,4 @@
-var paginator = new Paginator({
+var paginator = new Gallery.Paginator({
   element: $('div#photos'),
   items: photos,
   next: $('#next'),

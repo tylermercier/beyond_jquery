@@ -1,18 +1,45 @@
-V1 (15 mins)
-Lets build a photo browser, shows photos with pagination
-Now, we want to filter the photos by tag, still with pagination -> Reuse?
-Now, we want to show a list of employees, 10 at a time -> Reuse?
-problems: global state, logic/view/data all intermingled
+V1
+tell what we are doing
+  - building a photo gallery
+  - show flickr
 
-V2(10 mins)
-Extract everything into a class -> why?
-No global state -> why?
-However, this is not the right approach, as multiple copies of methods are copied -> why?
+  - we want paging
 
-V3 (15 mins)
-Prototype -> what?
-Reusable -> how?
-Namespace -> why?
-$name -> why?
-testing -> how?
-Handlebars -> how?/why?
+
+Show a wireframe  
+Show HTML code V1.1
+Show Javascript v1.1
+
+Go back to wireframe, show pager
+Show html for buttons, V1
+Show Javascript v1
+
+Show on the browser
+
+Climax
+  - our boss wants tags, too
+
+V2
+Show v2/paginator.js - explain 
+Show browser running V2
+Inspect Next, Previous buttons
+
+Show slide how prototypes work
+
+V3
+Show v2/paginator.js - explain
+Show tags pagination
+
+Show namespace.js
+
+Conclude
+  What we have learned
+
+
+
+
+
+
+
+
+
