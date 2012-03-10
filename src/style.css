@@ -1,36 +1,42 @@
 body{
-  width: 80%;
   margin: 0 auto;
 }
 
-.container {
+.container header {
   padding: 5%;
 }
 
-.photos-container{
-  width: 100%;
-  text-align: center;
+ul.pager {
+  padding: 0 48px 0 40px;
 }
 
-.photos {
-  padding: 15px;
-  margin: 0 auto;
+header.masthead h1{
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.container {
+  width: 80%;
+  padding-top: 20px;
+}
+
+.photos {  
+  width: 100%;
 }
 
 .photo {
-  width: 25%;
+  width: 33%;
   float: left;
-}
-
-.buttons{
-  width: 100%;
-  text-align: center;
 }
 
 #tag-info {
   display: none;
+  font-size: 20px;
+  line-height: 20px;
+  padding-left: 40px;
+  margin-bottom: 15px;
 }
 
 #tag-name{
-  color: #08C;
+  color: #D14;
 }

@@ -1,103 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Procedural</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <title>Initech Photo Gallery - v1</title>
     <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-
-    <style>
-      .photos {
-        padding: 15px;
-      }
-      .photo {
-        width: 25%;
-        float: left;
-      }
-      .photo img {
-      }
-      #previous, #next {
-        display: none;
-      }
-    </style>
+    <link href="src/style.css" rel="stylesheet">
   </head>
 
-  <body data-spy="scroll" data-target=".subnav" data-offset="50">
+  <body>
     <div class="container">
+      <header class="jumbotron masthead">
+        <h1>Initech Photo Gallery</h1>
+      </header>
+      <div id="tag-info">
+        Showing <span id="tag-name"></span> photos <a id="show-all" href="#">Show all</a>
+      </div>
+      <ul class="pager">
+        <li class="previous">
+          <a id="previous" href="#">&larr; Previous</a>
+        </li>
+        <li class="next">
+          <a id="next" href="#">Next &rarr;</a>
+        </li>
+      </ul>
+      <div id="photos" class="photos"></div>
+    </div>
 
-  <header class="jumbotron masthead">
-    Header
-  </header>
-
-  <div class="photos"></div>
-  <div class="clearfix"></div>
-  <button id="previous" class="btn">Previous</button>
-  <button id="next" class="btn">Next</button>
-
-  <footer class="footer">
-    Footer
-  </footer>
-  </div>
-
-    <script type="text/javascript" src="lib/underscore/underscore.js"></script>
-    <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="src/photo_collection.js"></script>
     <script id="content-template" type="example/template">
       <div class="photo">
-        <img src="{{url}}" alt="{{title}}" />
-        <p>{{caption}}</p>
-        <p>{{tags}}</p>
+        <figure>
+          <img src="{{url}}" alt="{{title}}" />
+          <figcaption>{{caption}}</figcaption>
+        </figure>
+        <p>Tags: {{tags}}</p>
       </div>
     </script>
+
+    <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="src/photo_collection.js"></script>
     <script type="text/javascript" src="src/renderer.js"></script>
-    <script type="text/javascript">
-
-    var photos_element = $('div.photos');
-
-    var offset = 0;
-    var imageLimit = 4;
-
-    function showPictures() {
-      $('div.photos').empty();
-      var i;
-      var end = offset + imageLimit;
-      end = Math.min(photos.length, end);
-      for (i=offset; i<end; i++) {
-        photos_element.append(renderer.render(photos[i]));
-      };
-
-      updateButtons();
-    }
-
-    function updateButtons() {
-      if ((offset + imageLimit) < photos.length){
-        $('#next').show();
-      } else {
-        $('#next').hide();
-      }
-
-      if (offset > 0){
-        $('#previous').show();
-      } else {
-        $('#previous').hide();
-      }
-    }
-
-    $('#next').on('click', function () {
-      offset += imageLimit;
-      showPictures();
-    });
-
-    $('#previous').on('click', function () {
-      offset -= imageLimit;
-      showPictures();
-    });
-
-    showPictures();
-    </script>
+    <script type="text/javascript" src="src/v1/v1.js"></script>
   </body>
 </html>

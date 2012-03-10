@@ -27,6 +27,10 @@ Paginator.prototype.showPage = function(currentPage){
     this.element.append(this.renderer.render(this.items[i]));
   }
 
+  if(this.footer){
+    this.element.append(this.footer);
+  }
+
   this.updatePreviousButton(currentPage);
   this.updateNextButton(currentPage);
 }

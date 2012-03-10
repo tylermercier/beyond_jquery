@@ -1,4 +1,4 @@
-var Paginator = function(element, items, pageSize, next, previous, renderer){
+var Paginator = function(element, items, pageSize, next, previous, renderer, footer){
 
   this.element = element;
   this.items = items,
@@ -6,6 +6,7 @@ var Paginator = function(element, items, pageSize, next, previous, renderer){
   this.previous = previous,
   this.renderer = renderer;
   this.pageSize = pageSize;
+  this.footer = footer;
 
   var showPage = function(pageNumber){
     var startIndex = (pageNumber - 1) * pageSize;
@@ -17,6 +18,10 @@ var Paginator = function(element, items, pageSize, next, previous, renderer){
       element.append(renderer.render(items[i]));
     }
 
+    if(footer){
+      element.append(footer);
+    }
+    
     updateNav(previous,  pageNumber > 1,                         pageNumber - 1);
     updateNav(next,      (pageNumber * pageSize) < items.length, pageNumber + 1);
   }
