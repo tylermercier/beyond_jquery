@@ -53,7 +53,8 @@
 
     <script type="text/javascript" src="lib/underscore/underscore.js"></script>
     <script type="text/javascript" src="lib/jquery/jquery-1.7.1.js"></script>
-    <script type="text/javascript" src="lib/photo_collection.js"></script>
+    <script type="text/javascript" src="src/photo_collection.js"></script>
+    <script type="text/javascript" src="src/renderer.js"></script>
     <script type="text/javascript">
 
     var photos_element = $('div.photos');
@@ -61,13 +62,15 @@
     var offset = 0;
     var imageLimit = 4;
 
+    var renderer = new CustomTemplateRenderer($('#content-template'));
+
     function showPictures() {
       $('div.photos').empty();
       var i;
       var end = offset + imageLimit;
       end = Math.min(photos.length, end);
       for (i=offset; i<end; i++) {
-        photos_element.append(render(photos[i]));
+        photos_element.append(renderer.render(photos[i]));
       };
 
       updateButtons();
