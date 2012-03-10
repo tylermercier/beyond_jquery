@@ -1,3 +1,12 @@
+body{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container {
+  padding: 5%;
+}
+
 .photos-container{
   width: 100%;
   text-align: center;
@@ -23,5 +32,5 @@
 }
 
 #tag-name{
-  color: blue;
+  color: #08C;
 }

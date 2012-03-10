@@ -8,7 +8,8 @@ var photos = [
       "food",
       "fruit",
       "jamming",
-      "beautiful"
+      "beautiful",
+      "colorful"
     ]
   },
   {
@@ -67,5 +68,60 @@ var photos = [
       "classic",
       "car"
     ]
+  },
+  {
+    caption: "Pay phones",
+    image: {
+      url: "pictures/007.jpg"
+    },
+    tags: [
+      "classic",
+      "phone",
+      "colorful"
+    ]
+  },
+  {
+    caption: "Baloon",
+    image: {
+      url: "pictures/008.jpg"
+    },
+    tags: [
+      "baloon",
+      "colorful"
+    ]
+  },
+  {
+    caption: "Chinese colors",
+    image: {
+      url: "pictures/009.jpg"
+    },
+    tags: [
+      "chinese",
+      "colorful",
+      "lights"
+    ]
+  },
+  {
+    caption: "Green",
+    image: {
+      url: "pictures/010.jpg"
+    },
+    tags: [
+      "green",
+      "colorful",
+      "plants"
+    ]
+  },
+  {
+    caption: "Elephants garden",
+    image: {
+      url: "pictures/011.jpg"
+    },
+    tags: [
+      "green",
+      "colorful",
+      "elephants"
+    ]
   }
+
 ];
