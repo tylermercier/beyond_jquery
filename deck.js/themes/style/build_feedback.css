@@ -1,0 +1,26 @@
+em {
+  color: blue;
+}
+.deck-prev-link,
+.deck-next-link {
+    display: none;
+}
+.keydown.deck-container h1 {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: black;
+  text-align: none; }
+.keydown.deck-container h2, .keydown.deck-container h3, .keydown.deck-container h4, .keydown.deck-container h5, .keydown.deck-container p, .keydown.deck-container li {
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: normal; }
+.keydown.deck-container h2 {
+  font-size: 3rem; }
+.keydown.deck-container h3 {
+  font-size: 2.25em; }
+.keydown.deck-container h4 {
+  font-size: 1.75rem; }
+.keydown.deck-container p, .keydown.deck-container li {
+  font-size: 1.5rem; }
+.keydown.deck-container .deck-status {
+  font-size: .75rem; }

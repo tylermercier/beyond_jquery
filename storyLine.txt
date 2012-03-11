@@ -1,45 +1,96 @@
-V1
-tell what we are doing
-  - building a photo gallery
-  - show flickr
+Gallery Introduction (5 mins/Sohan)
+  - example problem
+  - focus on code, simple problem
+  - domain stretched to introduce complexity
+  - inspiration
+    - flickr
+    - gallery with pagination
+  - similar
+    - search
+    - tablular data
 
-  - we want paging
+Code Introduction (5 mins/Tyler)
+  - discuss wireframes
+    - images
+    - captions
+    - title
+    - buttons
+  - explain functionality
+    - display images
+    - paging
+    - tags
+  - pre-code
+    - explain data source
+  - v1.1 html
+    - relate elements back to wireframes
+    - explain template
+  - v1.1 javascript
+    - global jQuery display element
+    - global page state
+    - display function
+
+Demo Version 1 (1 min)
+  - Show working version
+  - Stop for questions
+
+New Feature (2 mins/Sohan)
+  - boss likes tagging
+  - problematic with global state
+
+Module Pattern (8 mins/Sohan)
+  - discuss patterns purpose
+  - walkthrough v2 javascript [SPLIT INTO TWO PARTS?]
+    - object creation
+    - dependency passing
+    - new button events (data attributes)
+  - show working demo
+    - show data attributes
+
+Prototype Introduction (4 mins/Tyler)
+  - switch to slides
+  - JavaScript is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.
+
+Code (6 mins/Tyler)
+  - discuss prototype purpose
+    - multiple instances
+    - single functions definition in memory
+    - cleaner object creation
+    - taking advantage of prototypical inheritence
+  - walkthrough v3 javascript
+    - dependencies
+    - show tagging events
+    - multiple instance support
+  - walkthrough prototype structure
+    - function as constructor
+    - prototype on function
+
+Namespace Example (2 mins/Tyler)
+  - cleanup class definitions
+  - intent of Gallery object
+  - no big change, just another scope trick
+
+What was covered (5 mins)
+  - remove global state
+  - better scope handling
+  - state tricks (data attributes)
+  - object creation patterns (module/class)
+  - namespacing
 
 
-Show a wireframe  
-Show HTML code V1.1
-Show Javascript v1.1
-
-Go back to wireframe, show pager
-Show html for buttons, V1
-Show Javascript v1
-
-Show on the browser
-
-Climax
-  - our boss wants tags, too
-
-V2
-Show v2/paginator.js - explain 
-Show browser running V2
-Inspect Next, Previous buttons
-
-Show slide how prototypes work
-
-V3
-Show v2/paginator.js - explain
-Show tags pagination
-
-Show namespace.js
-
-Conclude
-  What we have learned
-
-
-
-
-
-
-
-
-
+OTHER
+  - JavaScript Goodies
+    - Lambda (origin from scheme)
+    - Closures
+    - Dynamic Objects
+    - Loose Typing
+    - Object Literals
+    - One number type (IEEE floating point)
+  - JavaScript Warts
+    - Global Variables
+    - '+' adds and concatenates
+    - Semicolon insertion
+    - typeof
+    - with and eval
+    - phony arrays
+    - '=='' and '!=''
+    - false, null, undefined, NaN

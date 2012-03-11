@@ -6,13 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
-	<title>Getting Started with deck.js</title>
-	
-	<meta name="description" content="A jQuery library for modern HTML presentations">
-	<meta name="author" content="Caleb Troughton">
-	<meta name="viewport" content="width=1024, user-scalable=no">
-	
+	<title>JavaScript, Beyond jQuery</title>
 	<!-- Core and extension CSS files -->
 	<link rel="stylesheet" href="../core/deck.core.css">
 	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
@@ -20,40 +14,41 @@
 	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
 	<link rel="stylesheet" href="../extensions/status/deck.status.css">
 	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
-	
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="../themes/style/web-2.0.css">
-	
+	<link rel="stylesheet" href="../themes/style/build_feedback.css">
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="../themes/transition/horizontal-slide.css">
-	
 	<script src="../modernizr.custom.js"></script>
 </head>
 
 <body class="deck-container">
 
-<!-- Begin slides -->
 <section class="slide" id="title-slide">
 	<h1>JavaScript, Beyond jQuery</h1>
 	<div>
 		S M Sohan & Tyler Mercier<br/>
 		Prairie Dev Con - March 14, 2012<br/>
-		10:45 - 11:45am
+		10:50 - 12:00pm
 	</div>
 </section>
 
 <section class="slide" id="intro-slide">
 	<h2>Who are these guys?</h2>
-	<img src="file:///Users/Thoughtworks/Documents/code/javascript/deck.js/images/profile_sohan.jpg" alt="Sohan">
-	<img src="file:///Users/Thoughtworks/Documents/code/javascript/deck.js/images/profile_tyler.jpg" alt="Tyler">
+	<img src="../images/profile_sohan.jpg" alt="Sohan">
+	<img src="../images/profile_tyler.jpg" alt="Tyler">
 </section>
 
-<section class="slide" id="jquery-define">
-	<h2>What would you say you do here?</h2>
-	<img src="file:///Users/Thoughtworks/Documents/code/javascript/deck.js/images/logo_jquery.png" alt="jQuery">
+<section class="slide" id="intro-jquery">
+	<div style="padding: 300px 0 50px 0;">
+		<img src="../images/logo_jquery.png" alt="jQuery">
+	</div>
+</section>
+
+<section class="slide" id="jquery-features">
+	<h2>jQuery Features</h2>
 	<ol>
 		<li class="slide" id="jquery-features-selectors">
-			<h3>DOM Traveral</h3>
+			<h3>DOM Traversal</h3>
 			<p>Simple HTML document selectors</p>
 		</li>
 		<li class="slide" id="jquery-features-events">
@@ -71,105 +66,9 @@
 	</ol>
 </section>
 
-<section class="slide" id="missing-features">
-	<h2>What is missing?</h2>
-	<ul>
-		<li class="slide" id="missing-features-code-structure">
-			<h3>Code Structure</h3>
-			<p>Not making a mess of things. Making use of prototype</p>
-		</li>
-		<li class="slide" id="missing-features-project-structure">
-			<h3>Project Structure</h3>
-			<p>Patterns like MVC or MVVM</p>
-		</li>
-		<li class="slide" id="missing-features-reuse">
-			<h3>Code Reuse</h3>
-			<p>Inheritence, mixins, etc...</p>
-		</li>
-	</ul>
-</section>
-
-<section class="slide" id="javascript-the-language">
-	<h2>What does JavaScript bring to the table?</h2>
-	<p>JavaScript is a prototype-based scripting language that is dynamic, weakly typed and has first-class functions. It is a multi-paradigm language, supporting object-oriented, imperative, and functional programming styles.</p>
-</section>
-
-<section class="slide" id="javascript-bad-parts">
-	<h2>JavaScript has some warts</h2>
-	<ul>
-		<li>
-			<h3>Global Variables</h3>
-		</li>
-		<li>
-			<h3>+ adds and concatenates</h3>
-		</li>
-		<li>
-			<h3>Semicolon insertion</h3>
-		</li>
-		<li>
-			<h3>typeof</h3>
-		</li>
-		<li>
-			<h3>with and eval</h3>
-		</li>
-		<li>
-			<h3>phony arrays</h3>
-		</li>
-		<li>
-			<h3>== and !=</h3>
-		</li>
-		<li>
-			<h3>false, null, undefined, NaN</h3>
-		</li>
-	</ul>
-</section>
-
-<section class="slide" id="javascript-good-parts">
-	<h2>But it isn't all bad</h2>
-	<ul>
-		<li>
-			<h3>Lambda (origin from scheme)</h3>
-		</li>
-		<li>
-			<h3>Closures</h3>
-		</li>
-		<li>
-			<h3>Dynamic Objects</h3>
-		</li>
-		<li>
-			<h3>Loose Typing</h3>
-		</li>
-		<li>
-			<h3>Object Literals</h3>
-		</li>
-		<li>
-			<h3>One number type (IEEE floating point)</h3>
-		</li>
-	</ul>
-</section>
-
-<section class="slide" id="javascript-prototypal-inheritance">
-	<h2>Prototypal Inheritance</h2>
-	<ul>
-		<li>
-			<h3>form of delegation or Differential Inheritance</h3>
-		</li>
-		<li>
-			<h3>Class-free</h3>
-		</li>
-		<li>
-			<h3>Objects inherit from objects</h3>
-		</li>
-	</ul>
-</section>
-
-<section class="slide" id="intro">
-	<h2>The good news is that these are easily achieved with JavaScript</h2>
-</section>
-
-<section class="slide" id="markup">
-	<h2>The Markup</h2>
-	<p>Slides are just HTML elements with a class of <code>slide</code>.</p>
+<section class="slide" id="jquery-dom">
+	<h2>DOM Traversal</h2>
+	<p>Selecting DOM elements with CSS selectors</p>
 	<pre><code>&lt;section class=&quot;slide&quot;&gt;
    &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
    &lt;ol&gt;
@@ -186,93 +85,45 @@
 &lt;/section&gt;</code></pre>
 </section>
 
-<section class="slide" id="themes">
-	<h2>Style Themes</h2>
-	<p>Customizes the colors, typography, and layout of slide&nbsp;content.</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/style-theme.css&quot;&gt;</code></pre>
-	<h2>Transition Themes</h2>
-	<p>Defines transitions between slides using CSS3 transitions.  Less capable browsers fall back to cutaways. But <strong>you</strong> aren&rsquo;t using <em>those</em> browsers to give your presentations, are&nbsp;you&hellip;</p>
-	<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/css/transition-theme.css&quot;&gt;</code></pre>
-</section>
-
-<section class="slide" id="extensions">
-	<h2>Extensions</h2>
-	<p>Core gives you basic slide functionality with left and right arrow navigation, but you may want more. Here are the ones included in this&nbsp;deck:</p>
-	
+<section class="slide" id="missing-features">
+	<h2>What else do we need?</h2>
 	<ul>
-		<li class="slide" id="extensions-goto">
-			<strong>deck.goto</strong>: Adds a shortcut key to jump to any slide number.  Hit g, type in the slide number, and hit&nbsp;enter.
+		<li class="slide" id="missing-features-extensible">
+			<h3>Extensibility</h3>
+			<p>Low cost of adding features (or removing)</p>
 		</li>
-		
-		<li class="slide" id="extensions-hash">
-			<strong>deck.hash</strong>: Enables internal linking within slides, deep linking to individual slides, and updates the address bar &amp; a permalink anchor with each slide&nbsp;change.
+		<li class="slide" id="missing-features-reusability">
+			<h3>Reusability</h3>
+			<p>Code we can easily share and re-use</p>
 		</li>
-
-		<li class="slide" id="extensions-menu">
-			<strong>deck.menu</strong>: Adds a menu view, letting you see all slides in a grid. Hit m to toggle to menu view, continue navigating your deck, and hit m to return to normal view. Touch devices can double-tap the deck to switch between&nbsp;views.
-		</li>
-
-		<li class="slide" id="extensions-navigation">
-			<strong>deck.navigation</strong>: Adds clickable left and right buttons for the less keyboard&nbsp;inclined.
-		</li>
-
-		<li class="slide" id="extensions-status">
-			<strong>deck.status</strong>: Adds a page number indicator. (current/total)
+		<li class="slide" id="missing-features-reliability">
+			<h3>Reliability</h3>
+			<p>Self reliant code with well managed dependencies</p>
 		</li>
 	</ul>
-	
-	<p class="slide" id="extension-folders">Each extension folder in the download package contains the necessary JavaScript, CSS, and HTML&nbsp;files. For a complete list of extension modules included in deck.js, check out the&nbsp;<a href="http://imakewebthings.github.com/deck.js/docs">documentation</a>.</p>
 </section>
 
-<section class="slide" id="nested">
-	<h2>Nested Slides</h2>
-	<p>That last slide had a few steps.  To create substeps in slides, just nest them:</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-  &lt;h2&gt;Extensions&lt;/h2&gt;
-  &lt;p&gt;Core gives you basic slide functionality...&lt;/p&gt;		
-  &lt;ul&gt;
-     &lt;li class=&quot;slide&quot;&gt;
-        &lt;h3&gt;deck.goto&lt;/h3&gt;
-        &lt;p&gt;Adds a shortcut key to jump to any slide number...&lt;/p&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;	
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-     &lt;li class=&quot;slide&quot;&gt;...&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/section&gt;</code></pre>
+<section class="slide" id="gallery-example">
+	<h2>Gallery Example</h2>
 </section>
 
-<section class="slide" id="elements-images">
-	<h2>Other Elements: Images</h2>
-	<img src="http://placekitten.com/600/375" alt="Kitties">
-	<pre><code>&lt;img src=&quot;http://placekitten.com/600/375&quot; alt=&quot;Kitties&quot;&gt;</code></pre>
+<section class="slide" id="javascript-prototypal-inheritance">
+	<h2>Prototypal Inheritance</h2>
+	<ul>
+		<li>
+			<h3>Class-free</h3>
+		</li>
+		<li>
+			<h3>Objects inherit from objects</h3>
+		</li>
+		<li>
+			<h3>Form of delegation or Differential Inheritance</h3>
+		</li>
+	</ul>
 </section>
 
-<section class="slide" id="elements-blockquotes">
-	<h2>Other Elements: Blockquotes</h2>
-	<blockquote cite="http://example.org">
-		<p>Food is an important part of a balanced diet.</p>
-		<p><cite>Fran Lebowitz</cite></p>
-	</blockquote>
-	<pre><code>&lt;blockquote cite=&quot;http://example.org&quot;&gt;
-  &lt;p&gt;Food is an important part of a balanced diet.&lt;/p&gt;
-  &lt;p&gt;&lt;cite&gt;Fran Lebowitz&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</code></pre>
-</section>
-
-
-<section class="slide" id="elements-videos">
-	<h2>Other Elements: Video Embeds</h2>
-	<p>Embed videos from your favorite online video service or with an HTML5 video&nbsp;element.</p>
-	
-	<iframe src="http://player.vimeo.com/video/1063136?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0"></iframe>
-	
-	<pre><code>&lt;iframe src=&quot;http://player.vimeo.com/video/1063136?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;400&quot; height=&quot;225&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre>
-</section>
-
-<section class="slide" id="digging-deeper">
-	<h2>Digging Deeper</h2>
-	<p>If you want to learn about making your own themes, extending deck.js, and more, check out the&nbsp;<a href="../docs/">documentation</a>.</p>
+<section class="slide" id="end-slide">
+	<div style="text-align: center;"><h2>Thank You!</h2></div>
 </section>
 
 <!-- deck.navigation snippet -->
@@ -296,7 +147,6 @@
 
 <!-- deck.hash snippet -->
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
-
 
 <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
 <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
