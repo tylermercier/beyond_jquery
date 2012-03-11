@@ -8,7 +8,6 @@ var photos = [
       "food",
       "fruit",
       "jamming",
-      "beautiful",
       "colorful"
     ]
   },
@@ -19,6 +18,7 @@ var photos = [
     },
     tags: [
       "bbq",
+      "food",
       "hot dogs"
     ]
   },
@@ -29,10 +29,8 @@ var photos = [
     },
     tags: [
       "sky",
-      "farming",
       "landscape",
-      "green",
-      "beautiful"
+      "green"
     ]
   },
   {
@@ -43,7 +41,8 @@ var photos = [
     tags: [
       "green",
       "flower",
-      "beautiful"
+      "plants",
+      "colorful"
     ]
   }
   ,{
@@ -55,7 +54,7 @@ var photos = [
       "lake",
       "sunset",
       "boating",
-      "beautiful"
+      "landscape"
     ]
   },
   {
@@ -72,7 +71,7 @@ var photos = [
   {
     caption: "Pay phones",
     image: {
-      url: "pictures/007.jpg"
+      url: "pictures/collection/007.jpg"
     },
     tags: [
       "classic",
@@ -83,7 +82,7 @@ var photos = [
   {
     caption: "Baloon",
     image: {
-      url: "pictures/008.jpg"
+      url: "pictures/collection/008.jpg"
     },
     tags: [
       "baloon",
@@ -93,7 +92,7 @@ var photos = [
   {
     caption: "Chinese colors",
     image: {
-      url: "pictures/009.jpg"
+      url: "pictures/collection/009.jpg"
     },
     tags: [
       "chinese",
@@ -104,7 +103,7 @@ var photos = [
   {
     caption: "Green",
     image: {
-      url: "pictures/010.jpg"
+      url: "pictures/collection/010.jpg"
     },
     tags: [
       "green",
@@ -115,7 +114,7 @@ var photos = [
   {
     caption: "Elephants garden",
     image: {
-      url: "pictures/011.jpg"
+      url: "pictures/collection/011.jpg"
     },
     tags: [
       "green",
@@ -123,5 +122,4 @@ var photos = [
       "elephants"
     ]
   }
-
 ];
