@@ -2,7 +2,7 @@ var photos = [
   {
     caption: "pickled fruit",
     image: {
-      url: "pictures/animal_collection/animals_001.jpg"
+      url: "public/images/animal_collection/animals_001.jpg"
     },
     tags: [
       "food",
@@ -13,7 +13,7 @@ var photos = [
   {
     caption: "bbq weiners",
     image: {
-      url: "pictures/animal_collection/animals_002.jpg"
+      url: "public/images/animal_collection/animals_002.jpg"
     },
     tags: [
       "bbq",
@@ -23,7 +23,7 @@ var photos = [
   {
     caption: "power lines",
     image: {
-      url: "pictures/animal_collection/animals_003.jpg"
+      url: "public/images/animal_collection/animals_003.jpg"
     },
     tags: [
       "sky",
@@ -35,7 +35,7 @@ var photos = [
   {
     caption: "blue flower",
     image: {
-      url: "pictures/animal_collection/animals_004.jpg"
+      url: "public/images/animal_collection/animals_004.jpg"
     },
     tags: [
       "green",
@@ -45,7 +45,7 @@ var photos = [
   ,{
     caption: "lake sunset",
     image: {
-      url: "pictures/animal_collection/animals_005.jpg"
+      url: "public/images/animal_collection/animals_005.jpg"
     },
     tags: [
       "lake",
@@ -56,7 +56,7 @@ var photos = [
   {
     caption: "old car",
     image: {
-      url: "pictures/animal_collection/animals_006.jpg"
+      url: "public/images/animal_collection/animals_006.jpg"
     },
     tags: [
       "old",
@@ -67,7 +67,7 @@ var photos = [
   {
     caption: "old car",
     image: {
-      url: "pictures/animal_collection/animals_007.jpg"
+      url: "public/images/animal_collection/animals_007.jpg"
     },
     tags: [
       "old",

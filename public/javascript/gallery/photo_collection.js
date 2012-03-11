@@ -2,7 +2,7 @@ var photos = [
   {
     caption: "pickled fruit",
     image: {
-      url: "pictures/collection/001.jpg"
+      url: "public/images/collection/001.jpg"
     },
     tags: [
       "food",
@@ -14,7 +14,7 @@ var photos = [
   {
     caption: "bbq weiners",
     image: {
-      url: "pictures/collection/002.jpg"
+      url: "public/images/collection/002.jpg"
     },
     tags: [
       "bbq",
@@ -25,7 +25,7 @@ var photos = [
   {
     caption: "power lines",
     image: {
-      url: "pictures/collection/003.jpg"
+      url: "public/images/collection/003.jpg"
     },
     tags: [
       "sky",
@@ -36,7 +36,7 @@ var photos = [
   {
     caption: "blue flower",
     image: {
-      url: "pictures/collection/004.jpg"
+      url: "public/images/collection/004.jpg"
     },
     tags: [
       "green",
@@ -48,7 +48,7 @@ var photos = [
   ,{
     caption: "lake sunset",
     image: {
-      url: "pictures/collection/005.jpg"
+      url: "public/images/collection/005.jpg"
     },
     tags: [
       "lake",
@@ -60,7 +60,7 @@ var photos = [
   {
     caption: "old car",
     image: {
-      url: "pictures/collection/006.jpg"
+      url: "public/images/collection/006.jpg"
     },
     tags: [
       "old",
@@ -71,7 +71,7 @@ var photos = [
   {
     caption: "Pay phones",
     image: {
-      url: "pictures/collection/007.jpg"
+      url: "public/images/collection/007.jpg"
     },
     tags: [
       "classic",
@@ -82,7 +82,7 @@ var photos = [
   {
     caption: "Baloon",
     image: {
-      url: "pictures/collection/008.jpg"
+      url: "public/images/collection/008.jpg"
     },
     tags: [
       "baloon",
@@ -92,7 +92,7 @@ var photos = [
   {
     caption: "Chinese colors",
     image: {
-      url: "pictures/collection/009.jpg"
+      url: "public/images/collection/009.jpg"
     },
     tags: [
       "chinese",
@@ -103,7 +103,7 @@ var photos = [
   {
     caption: "Green",
     image: {
-      url: "pictures/collection/010.jpg"
+      url: "public/images/collection/010.jpg"
     },
     tags: [
       "green",
@@ -114,7 +114,7 @@ var photos = [
   {
     caption: "Elephants garden",
     image: {
-      url: "pictures/collection/011.jpg"
+      url: "public/images/collection/011.jpg"
     },
     tags: [
       "green",

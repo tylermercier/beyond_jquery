@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <title>Photo Gallery - V2</title>
-    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="src/style.css" rel="stylesheet">
+    <link href="public/stylesheet/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="public/stylesheet/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="public/stylesheet/style.css" rel="stylesheet">
   </head>
 
   <body>
@@ -12,23 +12,36 @@
       <header class="jumbotron masthead">
         <h1>Photo Playground</h1>
       </header>
-      <ul>
-        <li>
-          <a href="deck.js/introduction/index.html">Presentation</a>
-        </li>
-        <li>
-          <a href="v1.html">Gallery Version 1</a>
-        </li>
-        <li>
-          <a href="v2.html">Gallery Version 2</a>
-        </li>
-        <li>
-          <a href="v3.html">Gallery Version 3</a>
-        </li>
-        <li>
-          <a href="SpecRunner.html">Tests</a>
-        </li>
-      </ul>
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="row-fluid">
+            <div class="span6">
+              <p>Presentation</p>
+              <ul>
+                <li>
+                  <a href="presentation/deck.js/introduction/index.html">Deck</a>
+                </li>
+                <li>
+                  Gallery [ <a href="v1.html">Version 1</a>
+                  , <a href="v2.html">Version 2</a>
+                  , <a href="v3.html">Version 3</a> ]
+                </li>
+              </ul>
+            </div>
+            <div class="span6">
+              <p>Other</p>
+              <ul>
+                <li>
+                  <a href="templates.html">Templates Example</a>
+                </li>
+                <li>
+                  <a href="tests/SpecRunner.html">Jasmine Tests</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
