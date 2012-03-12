@@ -1,0 +1,17 @@
+- JavaScript Goodies
+    - Lambda (origin from scheme)
+    - Closures
+    - Dynamic Objects
+    - Loose Typing
+    - Object Literals
+    - One number type (IEEE floating point)
+
+- JavaScript Warts
+    - Global Variables
+    - '+' adds and concatenates
+    - Semicolon insertion
+    - typeof
+    - with and eval
+    - phony arrays
+    - '=='' and '!=''
+    - false, null, undefined, NaN

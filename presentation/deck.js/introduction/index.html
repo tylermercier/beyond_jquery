@@ -21,7 +21,12 @@
 	<!-- Code Mirror Extension -->
 	<link rel="stylesheet" href="../extensions/codemirror/deck.codemirror.css">
 	<link rel="stylesheet" href="../extensions/codemirror/themes/default.css">
+	<link rel="stylesheet" href="../extensions/tyler_styles/style.css">
 	<script src="../modernizr.custom.js"></script>
+
+	<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+	<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../jquery-1.7.min.js"><\/script>')</script>
 </head>
 
 <body class="deck-container">
@@ -37,8 +42,8 @@
 
 <section class="slide" id="intro-slide">
 	<h2>Who are these guys?</h2>
-	<img src="../images/profile_sohan.jpg" alt="Sohan">
-	<img src="../images/profile_tyler.jpg" alt="Tyler">
+	<img class="box-shadow" src="../images/profile_sohan.jpg" alt="Sohan">
+	<img class="box-shadow" src="../images/profile_tyler.jpg" alt="Tyler">
 </section>
 
 <section class="slide" id="intro-jquery">
@@ -62,26 +67,54 @@ var divChildren = allDivs.children();</div>
 <section class="slide" id="jquery-events">
 	<h2>Event Handling</h2>
 	<p>Wiring up behavior, such as button clicks</p>
+	<div>
 	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// Use 'on' with jQuery 1.7+
-$("#dataTable tbody tr").on("click", function(event){
+$("#myButton").on("click", function(event){
   alert($(this).text());
 });</div>
+	</div>
+	<br/>
+	<div>
+		<button id="myButton">My Button</button>
+	</div>
 </section>
+<script type="text/javascript">
+$("#myButton").on("click", function(event){
+  alert($(this).text());
+});
+</script>
 
 <section class="slide" id="jquery-animations">
 	<h2>Animations</h2>
 	<p>Visual behavior, such as sliding</p>
+	<div>
 	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// Expands a box when clicked
 $("#go").click(function(){
   $("#block").animate({
-    width: "70%",
     opacity: 0.4,
     marginLeft: "0.6in",
     fontSize: "3em",
     borderWidth: "10px"
   }, 1500 );
 });</div>
+	</div>
+	<br/>
+	<div>
+		<button id="go">Click</button>
+		<div id="block" style="width: 100%;">Some text.</div>
+	</div>
 </section>
+
+<script type="text/javascript">
+$("#go").click(function(){
+  $("#block").animate({
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );
+});
+</script>
 
 <section class="slide" id="jquery-utilities">
 	<h2>Utilities</h2>
@@ -114,9 +147,14 @@ $.ajax({
 	</ul>
 </section>
 
+<section class="slide" id="introduce-application">
+	<h2>Sample Application</h2>
+	<h1>Photo Gallery</h1>
+</section>
+
 <section class="slide" id="example-project">
 	<h2>Demo Application</h2>
-	<div style="width: 600px;padding-left:40px;-webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);-moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);">
+	<div style="width: 600px;padding-left:60px;" class="box-shadow">
 		<img style="width: 100%;" src="../images/Mockup.jpg" alt="mockup">
 	</div>
 </section>
@@ -149,12 +187,39 @@ $.ajax({
       </div>
     </script>
   </body>
-</html>
-    </textarea>
+</html></textarea>
   </div>
 </section>
 
-<section class="slide" id="javascript-prototypal-inheritance">
+<section class="slide" id="gallery-javascript-start">
+	<h2>Photo Gallery</h2>
+	<p>
+	  This is the starting JavaScript for our gallery
+	</p>
+	<div>
+  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var photos_element = $('div.photos');
+
+var offset = 0;
+var imageLimit = 3;
+
+function showPictures() {
+  photos_element.empty();
+  
+  var end = offset + imageLimit;
+  end = Math.min(photos.length, end);
+
+  
+  for (var i=offset; i<end; i++) {
+    photos_element.append(renderer.render(photos[i]));
+  };
+
+}
+
+showPictures();</textarea>
+</div>
+</section>
+
+<section class="slide" id="javascript-prototypal">
 	<h2>Prototypal Inheritance</h2>
 	<ul>
 		<li>
@@ -169,6 +234,82 @@ $.ajax({
 	</ul>
 </section>
 
+<section class="slide" id="javascript-prototypal-inheritance">
+	<h2>How exactly does that work?</h2>
+	<table class="table table-striped table-bordered table-condensed">
+		<thead>
+			<tr>
+				<td>
+					<strong>Classical Inheritance</strong>
+				</td>
+				<td>
+					<strong>JavaScript Prototypal Inheritance</strong>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					Classes
+				</td>
+				<td>
+					Functions
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Constructors
+				</td>
+				<td>
+					Functions
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Methods
+				</td>
+				<td>
+					Functions
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="slide" id="javascript-prototypal-chaining">
+	<h2>Prototype Chaining</h2>
+	<div>
+  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var person = { firstName: "Paul", lastName: "Irish" }</textarea>
+	</div>
+	<div>
+		<img src="../images/prototype-chain.png" alt="Sohan">
+	</div>
+	<p><a href="http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/">source - yehuda katz</a></p>
+</section>
+
+<section class="slide" id="javascript-prototypal-chaining-code">
+	<h2>Prototype Chaining</h2>
+	<p>
+	  How prototype lookup works
+	</p>
+	<div>
+  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">// Prototype chaining lookup
+function getProperty(obj, prop)
+  // Check instance
+  if (obj.hasOwnProperty(prop)) {
+    return obj[prop];
+  }
+  // Recurse through prototype chain
+  else if (obj.__proto__ !== null) {
+    return getProperty(obj.__proto__, prop);
+  }
+  else {
+    return undefined;
+  }
+}</textarea>
+</div>
+</section>
+
 <section class="slide" id="end-slide">
 	<div style="text-align: center;"><h2>References</h2></div>
 	<ul>
@@ -176,7 +317,13 @@ $.ajax({
 			<h3>Slides built with <a href="https://github.com/imakewebthings/deck.js">deck.js</a> and <a href="https://github.com/iros/deck.js-codemirror">codemirror</a></h3>
 		</li>
 		<li>
-			<h3>Useful Articles...?</h3>
+			<h3>Yehuda Katz - <a href="http://yehudakatz.com/2011/08/12/understanding-prototypes-in-javascript/">Understanding Prototypes in Javascript/</a></h3>
+		</li>
+		<li>
+			<h3>Keith Peters - <a href="http://www.adobe.com/devnet/html5/articles/javascript-object-creation.html">JavaScript Object Creation</a></h3>
+		</li>
+		<li>
+			<h3>Other good sources <a href="http://javascript.info/">http://javascript.info/</a> and <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden/</a></h3>
 		</li>
 	</ul>
 </section>
@@ -202,10 +349,6 @@ $.ajax({
 
 <!-- deck.hash snippet -->
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
-
-<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
-<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
-<script>window.jQuery || document.write('<script src="../jquery-1.7.min.js"><\/script>')</script>
 
 <!-- Deck Core and extensions -->
 <script src="../core/deck.core.js"></script>
