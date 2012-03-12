@@ -1,29 +1,28 @@
 var photos = [
   {
-    caption: "pickled fruit",
+    caption: "Fruit",
     image: {
       url: "public/images/collection/001.jpg"
     },
     tags: [
       "food",
       "fruit",
-      "jamming",
       "colorful"
     ]
   },
   {
-    caption: "bbq weiners",
+    caption: "BBQ",
     image: {
       url: "public/images/collection/002.jpg"
     },
     tags: [
-      "bbq",
       "food",
+      "cooking",
       "hot dogs"
     ]
   },
   {
-    caption: "power lines",
+    caption: "Farm",
     image: {
       url: "public/images/collection/003.jpg"
     },
@@ -34,7 +33,7 @@ var photos = [
     ]
   },
   {
-    caption: "blue flower",
+    caption: "Flower",
     image: {
       url: "public/images/collection/004.jpg"
     },
@@ -46,7 +45,7 @@ var photos = [
     ]
   }
   ,{
-    caption: "lake sunset",
+    caption: "Lake",
     image: {
       url: "public/images/collection/005.jpg"
     },
@@ -58,7 +57,7 @@ var photos = [
     ]
   },
   {
-    caption: "old car",
+    caption: "Car",
     image: {
       url: "public/images/collection/006.jpg"
     },
@@ -101,7 +100,7 @@ var photos = [
     ]
   },
   {
-    caption: "Green",
+    caption: "Grass",
     image: {
       url: "public/images/collection/010.jpg"
     },

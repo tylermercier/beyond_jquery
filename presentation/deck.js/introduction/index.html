@@ -15,9 +15,12 @@
 	<link rel="stylesheet" href="../extensions/status/deck.status.css">
 	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
 	<!-- Style theme. More available in /themes/style/ or create your own. -->
-	<link rel="stylesheet" href="../themes/style/build_feedback.css">
+	<link rel="stylesheet" href="../themes/style/default.css">
 	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
 	<link rel="stylesheet" href="../themes/transition/horizontal-slide.css">
+	<!-- Code Mirror Extension -->
+	<link rel="stylesheet" href="../extensions/codemirror/deck.codemirror.css">
+	<link rel="stylesheet" href="../extensions/codemirror/themes/default.css">
 	<script src="../modernizr.custom.js"></script>
 </head>
 
@@ -44,45 +47,53 @@
 	</div>
 </section>
 
-<section class="slide" id="jquery-features">
-	<h2>jQuery Features</h2>
-	<ol>
-		<li class="slide" id="jquery-features-selectors">
-			<h3>DOM Traversal</h3>
-			<p>Simple HTML document selectors</p>
-		</li>
-		<li class="slide" id="jquery-features-events">
-			<h3>Event Handling</h3>
-			<p>Wiring up behavior, such as button clicks</p>
-		</li>
-		<li class="slide" id="jquery-features-effects">
-			<h3>Animations</h3>
-			<p>Visual behavior, such as sliding</p>
-		</li>
-		<li class="slide" id="jquery-features-utilities">
-			<h3>Utilities</h3>
-			<p>AJAX, each, etc...</p>
-		</li>
-	</ol>
+<section class="slide" id="jquery-dom-traversal">
+	<h2>DOM Selectors with Traversal</h2>
+	<p>Simple HTML document selectors</p>
+	<div id="code" class="code" name="code" mode="javascript" style="display: none;">var allDivs = $('div');
+
+var spansWithTextClass = $('span.text');
+
+var sectionsWithIdContainer = $('section#container');
+
+var divChildren = allDivs.children();</div>
 </section>
 
-<section class="slide" id="jquery-dom">
-	<h2>DOM Traversal</h2>
-	<p>Selecting DOM elements with CSS selectors</p>
-	<pre><code>&lt;section class=&quot;slide&quot;&gt;
-   &lt;h2&gt;How to Make a Deck&lt;/h2&gt;
-   &lt;ol&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Write Slides&lt;/h3&gt;
-         &lt;p&gt;Slide content is simple HTML.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-         &lt;h3&gt;Choose Themes&lt;/h3&gt;
-         &lt;p&gt;One for slide styles and one for deck transitions.&lt;/p&gt;
-      &lt;/li&gt;
-      &hellip;
-   &lt;/ol&gt;
-&lt;/section&gt;</code></pre>
+<section class="slide" id="jquery-events">
+	<h2>Event Handling</h2>
+	<p>Wiring up behavior, such as button clicks</p>
+	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// Use 'on' with jQuery 1.7+
+$("#dataTable tbody tr").on("click", function(event){
+  alert($(this).text());
+});</div>
+</section>
+
+<section class="slide" id="jquery-animations">
+	<h2>Animations</h2>
+	<p>Visual behavior, such as sliding</p>
+	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// Expands a box when clicked
+$("#go").click(function(){
+  $("#block").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );
+});</div>
+</section>
+
+<section class="slide" id="jquery-utilities">
+	<h2>Utilities</h2>
+	<p>AJAX, each, etc...</p>
+	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// CSS Selector Example
+$.ajax({
+  url: "test.html",
+  context: document.body,
+  success: function(){
+    $(this).addClass("done");
+  }
+});</div>
 </section>
 
 <section class="slide" id="missing-features">
@@ -103,8 +114,44 @@
 	</ul>
 </section>
 
-<section class="slide" id="gallery-example">
-	<h2>Gallery Example</h2>
+<section class="slide" id="example-project">
+	<h2>Demo Application</h2>
+	<div style="width: 600px;padding-left:40px;-webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);-moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.7);">
+		<img style="width: 100%;" src="../images/Mockup.jpg" alt="mockup">
+	</div>
+</section>
+
+<section class="slide" id="gallery-html-start">
+	<h2>Photo Gallery</h2>
+	<p>
+	  This is the starting HTML for our gallery
+	</p>
+	<div>
+  	<textarea type="text/html" class="code" mode="text/html" style="display: none;"><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Photo Gallery - v1</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="jumbotron masthead">
+        <h1>Photo Gallery 1.0</h1>
+      </header>      
+      <div id="photos" class="photos"></div>
+    </div>
+    <script id="content-template" type="example/template">
+      <div class="photo">
+        <figure>
+          <img src="{{url}}" alt="{{title}}" />
+          <figcaption>{{caption}}</figcaption>
+        </figure>
+        <p>Tags: {{tags}}</p>
+      </div>
+    </script>
+  </body>
+</html>
+    </textarea>
+  </div>
 </section>
 
 <section class="slide" id="javascript-prototypal-inheritance">
@@ -123,7 +170,15 @@
 </section>
 
 <section class="slide" id="end-slide">
-	<div style="text-align: center;"><h2>Thank You!</h2></div>
+	<div style="text-align: center;"><h2>References</h2></div>
+	<ul>
+		<li>
+			<h3>Slides built with <a href="https://github.com/imakewebthings/deck.js">deck.js</a> and <a href="https://github.com/iros/deck.js-codemirror">codemirror</a></h3>
+		</li>
+		<li>
+			<h3>Useful Articles...?</h3>
+		</li>
+	</ul>
 </section>
 
 <!-- deck.navigation snippet -->
@@ -159,6 +214,18 @@
 <script src="../extensions/goto/deck.goto.js"></script>
 <script src="../extensions/status/deck.status.js"></script>
 <script src="../extensions/navigation/deck.navigation.js"></script>
+
+<!-- Base codemiror code -->
+<script src="../extensions/codemirror/codemirror.js"></script>
+<!-- Syntax highlighting Modes -->
+<!-- javascript -->
+<script src="../extensions/codemirror/mode/javascript/javascript.js"></script>
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="../extensions/codemirror/mode/xml/xml.js"></script>
+<script src="../extensions/codemirror/mode/css/css.js"></script>
+<script src="../extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<!-- Plugin code -->
+<script src="../extensions/codemirror/deck.codemirror.js"></script>
 
 <!-- Initialize the deck -->
 <script>
