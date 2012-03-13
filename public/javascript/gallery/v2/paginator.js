@@ -1,4 +1,12 @@
-var Paginator = function(element, items, pageSize, next, previous, renderer, footer){
+var Paginator = function(dependencies){
+  
+  var element = dependencies.element;
+  var items = dependencies.items;
+  var pageSize = dependencies.pageSize;
+  var next = dependencies.next;
+  var previous = dependencies.previous;
+  var renderer = dependencies.renderer;
+  var footer = dependencies.footer;
 
   var showPage = function(pageNumber){
     var startIndex = (pageNumber - 1) * pageSize;
@@ -7,7 +15,7 @@ var Paginator = function(element, items, pageSize, next, previous, renderer, foo
     element.empty();
 
     for(var i = startIndex; i < endIndex; i++){
-      element.append(renderer.render(items[i]));
+      element.append(renderer(items[i]));
     }
 
     if(footer){

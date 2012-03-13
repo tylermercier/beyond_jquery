@@ -123,4 +123,7 @@ var photos = [
   }
 ];
 
-var tags = $.unique($.map(photos, function(photo){return photo.tags})).sort();
+var tags = _.map(photos, function(photo){return photo.tags});
+tags = _.flatten(tags);
+tags = _.uniq(tags);
+tags = tags.sort();

@@ -19,7 +19,7 @@ var tagPaginator = new Paginator({
 });
 tagPaginator.showPage(1);
 
-$('.tag').live('click', function(){
+$('.photo-tag').live('click', function(){
   var selectedTag = this.dataset.tag;
 
   var photosContainingTag = $.grep(photos, function(photo){
