@@ -5,6 +5,6 @@ var paginator = Paginator(
   $('#next'),
   $('#previous'),
   renderer,
-  '<div class="clearFix"></div>'
+  '<div class="clearfix"></div>'
 );
 paginator.showPage(1);

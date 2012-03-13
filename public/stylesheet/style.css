@@ -30,9 +30,19 @@ header.masthead h1{
   width: 100%;
 }
 
+.tags-container{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .photo {
   width: 33%;
   float: left;
+}
+
+.tags a{
+  padding: 5px;
 }
 
 #tag-info {
@@ -45,4 +55,13 @@ header.masthead h1{
 
 #tag-name{
   color: #D14;
+}
+ul.left, ul.right{
+  width: 30%;
+  float: left;
+}
+
+#previous-tag, #next-tag{
+  padding: 0 20px;
+  font-weight: bold;
 }

@@ -24,8 +24,9 @@ Paginator.prototype.showPage = function(currentPage){
   var endIndex = Math.min(startIndex + this.pageSize, this.items.length);
 
   this.element.empty();
+
   for(var i = startIndex; i < endIndex; i++){
-    this.element.append(this.renderer.render(this.items[i]));
+    this.element.append(this.renderer(this.items[i]));
   }
 
   if(this.footer){

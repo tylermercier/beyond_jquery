@@ -122,3 +122,5 @@ var photos = [
     ]
   }
 ];
+
+var tags = $.unique($.map(photos, function(photo){return photo.tags})).sort();
