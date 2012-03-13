@@ -5,12 +5,11 @@ var imageLimit = 3;
 
 function showPictures() {
   photos_element.empty();
-  
+
   var end = offset + imageLimit;
   end = Math.min(photos.length, end);
 
-  
-  for (var i=offset; i<end; i++) {
+  for (var i = offset; i < end; i++) {
     photos_element.append(renderer.render(photos[i]));
   };
 
