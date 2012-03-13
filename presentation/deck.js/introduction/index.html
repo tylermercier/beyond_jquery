@@ -60,17 +60,11 @@
   </figure>
 </section>
 
-<section class="slide" id="presentation-journey">
+<section class="slide" id="journey-jquery">
   <h2>Mindmap</h2>
   <div>
-    <img src="../images/journey.png" alt="jQuery">
+    <img src="../images/journey_jquery.png" alt="jQuery">
   </div>
-</section>
-
-<section class="slide" id="intro-jquery">
-	<div style="padding: 300px 0 50px 0;">
-		<img src="../images/logo_jquery.png" alt="jQuery">
-	</div>
 </section>
 
 <section class="slide" id="jquery-dom-traversal">
@@ -150,6 +144,13 @@ $.ajax({
 });</div>
 </section>
 
+<section class="slide" id="journey-application">
+  <h2>Mindmap</h2>
+  <div>
+    <img src="../images/journey_application.png" alt="jQuery">
+  </div>
+</section>
+
 <section class="slide" id="introduce-application">
 	<h2>Sample Application</h2>
 	<h1>Photo Gallery</h1>
@@ -158,11 +159,11 @@ $.ajax({
 <section class="slide" id="project-requirements">
   <h2>Demo Application</h2>
   <ul>
-    <li class="slide" id="project-requirements-display">
-      <h3>Display Photos</h3>
+    <li class="slide" id="project-requirements-photos">
+      <h3>Display Photos w/ Pagination</h3>
     </li>
-    <li class="slide" id="project-requirements-pagination">
-      <h3>Pagination</h3>
+    <li class="slide" id="project-requirements-tags">
+      <h3>Display Tags w/ Pagination</h3>
     </li>
     <li class="slide" id="project-requirements-filtering">
       <h3>Filter by tag</h3>
@@ -171,6 +172,10 @@ $.ajax({
   <div style="margin: 0 auto; width: 50%;">
     <img src="../images/mockup.png" alt="mockup">
   </div>
+</section>
+
+<section class="slide" id="show-working-site">
+  <h1>Live Demo</h1>
 </section>
 
 <section class="slide" id="gallery-html-start">
@@ -183,16 +188,18 @@ $.ajax({
 </div>
 
 
-<script id="template" type="example/template">
-
+<script id="photo-template" type="text/x-handlebars-template">
   <div class="photo">
     <figure>
-      <img src="{{url}}" alt="{{title}}" />
+      <img src="{{image.url}}" alt="{{caption}}" />
       <figcaption>{{caption}}</figcaption>
+      <p>Tags: 
+      {{#each tags}}
+        <a href="#" data-tag="{{this}}" class="photo-tag">{{this}}</a>
+      {{/each}}
+      </p>
     </figure>
-    <p>Tags: {{tags}}</p>
   </div>
-
 </script></textarea>
   </div>
   <div style="padding-top: 20px;">
@@ -201,9 +208,7 @@ $.ajax({
     </p>
   </div>
   <div>
-    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var render = function(photo) {
-  return this.template.replace(/{{title}}/ig, photo.title);
-};</textarea>
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">Handlebars.compile($("#photo-template").html())</textarea>
   </div>
 </section>
 
@@ -234,7 +239,9 @@ function showPictures() {
 showPictures();</textarea>
 </div>
 </section>
+
 <section class="slide" id="show-code-1">
+  <h1>Code</h1>
 </section>
 
 <section class="slide" id="missing-features">
@@ -255,68 +262,73 @@ showPictures();</textarea>
   </ul>
 </section>
 
-<section class="slide" id="presentation-journey-2">
+<section class="slide" id="journey-module">
   <h2>Mindmap</h2>
   <div>
-    <img src="../images/journey.png" alt="jQuery">
+    <img src="../images/journey_module.png" alt="mindmap">
+  </div>
+</section>
+
+<section class="slide" id="module-pattern-code">
+  <h2>JavaSCript Module Pattern</h2>
+  <div>
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">// Example taken from http://www.yuiblog.com/blog/2007/06/12/module-pattern/
+
+var myModule = (function () {
+
+  //"private" variables:
+  var myPrivateVar = "I can be accessed only from within myModule.";
+
+  //"private" method:
+  var myPrivateMethod = function () {
+    YAHOO.log("I can be accessed only from within myModule");
+  }
+
+  return  {
+    myPublicProperty: "I'm accessible as myModule.myPublicProperty.",
+    myPublicMethod: function () {
+    }
+  };
+
+})(); // the parens here cause the anonymous function to execute and return</textarea>
+</div>
+</section>
+
+<section class="slide" id="javascript-namespacing">
+  <h2>JavaScript Namespaces</h2>
+  <div>
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var Gallery = Gallery || {};
+
+Gallery.Paginator = (function(){
+  //...
+})();</textarea>
+</div>
+</section>
+
+<section class="slide" id="show-code-v2">
+  <h1>Code</h1>
+</section>
+
+<section class="slide" id="journey-prototype">
+  <h2>Mindmap</h2>
+  <div>
+    <img src="../images/journey_prototype.png" alt="mindmap">
   </div>
 </section>
 
 <section class="slide" id="javascript-prototypal">
-	<h2>Prototypal Inheritance</h2>
+	<h2>JavaScript Prototypal Inheritance</h2>
 	<ul>
-		<li>
-			<h3>Class-free</h3>
+		<li class="slide" id="javascript-prototypal-no-classes">
+			<h3>No Classes, only Functions</h3>
 		</li>
-		<li>
-			<h3>Objects inherit from objects</h3>
-		</li>
-		<li>
-			<h3>Differential Inheritance (delegation)</h3>
-		</li>
+    <li class="slide" id="javascript-prototypal-functions">
+      <h3>Functions are Objects</h3>
+    </li>
+    <li class="slide" id="javascript-prototypal-prototypes">
+      <h3>Objects inherit through Prototypes</h3>
+    </li>
 	</ul>
-</section>
-
-<section class="slide" id="javascript-prototypal-inheritance">
-	<h2>Javascript Prototypes</h2>
-	<table class="table table-striped table-bordered table-condensed">
-		<thead>
-			<tr>
-				<td>
-					<strong>Classical Inheritance</strong>
-				</td>
-				<td>
-					<strong>JavaScript Prototypal Inheritance</strong>
-				</td>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>
-					Classes
-				</td>
-				<td>
-					Functions
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Constructors
-				</td>
-				<td>
-					Functions
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Methods
-				</td>
-				<td>
-					Functions
-				</td>
-			</tr>
-		</tbody>
-	</table>
 </section>
 
 <section class="slide" id="javascript-prototypal-chaining">
@@ -330,10 +342,14 @@ person.lastName;</textarea>
 	</div>
 </section>
 
-<section class="slide" id="presentation-closing">
+<section class="slide" id="show-code-v3">
+  <h1>Code</h1>
+</section>
+
+<section class="slide" id="journey-end">
   <h2>What was covered</h2>
   <div>
-    <img src="../images/journey.png" alt="jQuery">
+    <img src="../images/journey_end.png" alt="mindmap">
   </div>
 </section>
 

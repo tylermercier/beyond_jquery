@@ -1,4 +1,4 @@
-Paginator.init({
+Gallery.Paginator.init({
   element: $('#photos'),
   items: photos,
   pageSize: 3,
@@ -7,4 +7,4 @@ Paginator.init({
   renderer: Handlebars.compile($("#photo-template").html()),
   footer: '<div class="clearfix"></div>'
 });
-Paginator.showPage(1);
+Gallery.Paginator.showPage(1);

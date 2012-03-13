@@ -1,4 +1,6 @@
-var Paginator = (function(){  
+var Gallery = Gallery || {};
+
+Gallery.Paginator = (function(){  
 
   var _context = this;
 
