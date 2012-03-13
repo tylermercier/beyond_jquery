@@ -1,6 +1,6 @@
 // Example taken from http://www.yuiblog.com/blog/2007/06/12/module-pattern/
 
-myModule = function () {
+var myModule = (function () {
 
   //"private" variables:
   var myPrivateVar = "I can be accessed only from within myModule.";
@@ -16,4 +16,4 @@ myModule = function () {
     }
   };
 
-}(); // the parens here cause the anonymous function to execute and return
+})(); // the parens here cause the anonymous function to execute and return

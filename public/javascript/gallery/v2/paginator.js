@@ -1,29 +1,43 @@
-var Paginator = function(dependencies){
-  
-  var element = dependencies.element;
-  var items = dependencies.items;
-  var pageSize = dependencies.pageSize;
-  var next = dependencies.next;
-  var previous = dependencies.previous;
-  var renderer = dependencies.renderer;
-  var footer = dependencies.footer;
+var Paginator = (function(){  
+
+  var _context = this;
+
+  var init = function(dependencies){
+    _context.element = dependencies.element;
+    _context.items = dependencies.items;
+    _context.pageSize = dependencies.pageSize;
+    _context.next = dependencies.next;
+    _context.previous = dependencies.previous;
+    _context.renderer = dependencies.renderer;
+    _context.footer = dependencies.footer;
+
+    _context.next.live('click', function(e){
+      showPage(parseInt($(this)[0].dataset.page));
+      e.preventDefault();
+    });
+
+    _context.previous.live('click', function(e){
+      showPage(parseInt($(this)[0].dataset.page));
+      e.preventDefault();
+    });
+  }
 
   var showPage = function(pageNumber){
-    var startIndex = (pageNumber - 1) * pageSize;
-    var endIndex = Math.min(startIndex + pageSize, items.length);
+    var startIndex = (pageNumber - 1) * _context.pageSize;
+    var endIndex = Math.min(startIndex + _context.pageSize, _context.items.length);
 
-    element.empty();
+    _context.element.empty();
 
     for(var i = startIndex; i < endIndex; i++){
-      element.append(renderer(items[i]));
+      _context.element.append(_context.renderer(_context.items[i]));
     }
 
     if(footer){
-      element.append(footer);
+      _context.element.append(footer);
     }
     
-    updateNav(previous,  pageNumber > 1,                         pageNumber - 1);
-    updateNav(next,      (pageNumber * pageSize) < items.length, pageNumber + 1);
+    updateNav(_context.previous,  pageNumber > 1,                         pageNumber - 1);
+    updateNav(_context.next,      (pageNumber * _context.pageSize) < _context.items.length, pageNumber + 1);
   };
 
   function updateNav(nav, condition, page){
@@ -36,17 +50,8 @@ var Paginator = function(dependencies){
     }
   }
 
-  next.live('click', function(e){
-    showPage(parseInt($(this)[0].dataset.page));
-    e.preventDefault();
-  });
-
-  previous.live('click', function(e){
-    showPage(parseInt($(this)[0].dataset.page));
-    e.preventDefault();
-  });
-
   return {
+    init: init,
     showPage: showPage
   };
-}
+})();

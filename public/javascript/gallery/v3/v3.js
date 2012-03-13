@@ -1,4 +1,4 @@
-var paginator = new Paginator({
+var dependencies = {
   element: $('#photos'),
   items: photos,
   pageSize: 3,
@@ -7,6 +7,8 @@ var paginator = new Paginator({
   renderer: Handlebars.compile($("#photo-template").html()),
   footer: '<div class="clearfix"></div>'
 });
+
+var paginator = new Paginator(
 paginator.showPage(1);
 
 var tagPaginator = new Paginator({
