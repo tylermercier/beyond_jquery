@@ -61,7 +61,7 @@
 </section>
 
 <section class="slide" id="presentation-journey">
-  <h2>Durned Journey Slide</h2>
+  <h2>Mindmap</h2>
   <div>
     <img src="../images/journey.png" alt="jQuery">
   </div>
@@ -74,7 +74,7 @@
 </section>
 
 <section class="slide" id="jquery-dom-traversal">
-	<h2>DOM Selectors with Traversal</h2>
+	<h2>DOM Traversals</h2>
 	<p>Simple HTML document selectors</p>
 	<div id="code" class="code" name="code" mode="javascript" style="display: none;">var allDivs = $('div');
 
@@ -150,33 +150,26 @@ $.ajax({
 });</div>
 </section>
 
-<section class="slide" id="missing-features">
-	<h2>What else do we need?</h2>
-	<ul>
-		<li class="slide" id="missing-features-extensible">
-			<h3>Extensibility</h3>
-			<p>Low cost of adding features (or removing)</p>
-		</li>
-		<li class="slide" id="missing-features-reusability">
-			<h3>Reusability</h3>
-			<p>Code we can easily share and re-use</p>
-		</li>
-		<li class="slide" id="missing-features-reliability">
-			<h3>Reliability</h3>
-			<p>Self reliant code with well managed dependencies</p>
-		</li>
-	</ul>
-</section>
-
 <section class="slide" id="introduce-application">
 	<h2>Sample Application</h2>
 	<h1>Photo Gallery</h1>
 </section>
 
-<section class="slide" id="example-project">
-	<h2>Demo Application</h2>
-  <div style="margin: 0 auto;">
-		<img src="../images/mockup.png" alt="mockup">
+<section class="slide" id="project-requirements">
+  <h2>Demo Application</h2>
+  <ul>
+    <li class="slide" id="project-requirements-display">
+      <h3>Display Photos</h3>
+    </li>
+    <li class="slide" id="project-requirements-pagination">
+      <h3>Pagination</h3>
+    </li>
+    <li class="slide" id="project-requirements-filtering">
+      <h3>Filter by tag</h3>
+    </li>
+  </ul>
+  <div style="margin: 0 auto; width: 50%;">
+    <img src="../images/mockup.png" alt="mockup">
   </div>
 </section>
 
@@ -186,29 +179,31 @@ $.ajax({
 	  This is the starting HTML for our gallery
 	</p>
 	<div>
-  	<textarea type="text/html" class="code" mode="text/html" style="display: none;"><!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Photo Gallery - v1</title>
-  </head>
-  <body>
-    <div class="container">
-      <header class="jumbotron masthead">
-        <h1>Photo Gallery 1.0</h1>
-      </header>      
-      <div id="photos" class="photos"></div>
-    </div>
-    <script id="content-template" type="example/template">
-      <div class="photo">
-        <figure>
-          <img src="{{url}}" alt="{{title}}" />
-          <figcaption>{{caption}}</figcaption>
-        </figure>
-        <p>Tags: {{tags}}</p>
-      </div>
-    </script>
-  </body>
-</html></textarea>
+  	<textarea type="text/html" class="code" mode="text/html" style="display: none;"><div id="photos" class="photos">
+</div>
+
+
+<script id="template" type="example/template">
+
+  <div class="photo">
+    <figure>
+      <img src="{{url}}" alt="{{title}}" />
+      <figcaption>{{caption}}</figcaption>
+    </figure>
+    <p>Tags: {{tags}}</p>
+  </div>
+
+</script></textarea>
+  </div>
+  <div style="padding-top: 20px;">
+    <p>
+      This is our client side template code
+    </p>
+  </div>
+  <div>
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var render = function(photo) {
+  return this.template.replace(/{{title}}/ig, photo.title);
+};</textarea>
   </div>
 </section>
 
@@ -240,6 +235,24 @@ showPictures();</textarea>
 </div>
 </section>
 
+<section class="slide" id="missing-features">
+  <h2>What's missing?</h2>
+  <ul>
+    <li class="slide" id="missing-features-extensible">
+      <h3>Extensibility</h3>
+      <p>Low cost of adding features (or removing)</p>
+    </li>
+    <li class="slide" id="missing-features-reusability">
+      <h3>Reusability</h3>
+      <p>Code we can easily share and re-use</p>
+    </li>
+    <li class="slide" id="missing-features-reliability">
+      <h3>Reliability</h3>
+      <p>Self reliant code with well managed dependencies</p>
+    </li>
+  </ul>
+</section>
+
 <section class="slide" id="javascript-prototypal">
 	<h2>Prototypal Inheritance</h2>
 	<ul>
@@ -256,7 +269,7 @@ showPictures();</textarea>
 </section>
 
 <section class="slide" id="javascript-prototypal-inheritance">
-	<h2>How exactly does that work?</h2>
+	<h2>Javascript Prototypes</h2>
 	<table class="table table-striped table-bordered table-condensed">
 		<thead>
 			<tr>
@@ -300,7 +313,7 @@ showPictures();</textarea>
 <section class="slide" id="javascript-prototypal-chaining">
 	<h2>Prototype Chaining</h2>
 	<div>
-  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var person = { name: "John" }
+  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var person = { name: "John" } // typeof Object
 person.lastName;</textarea>
 	</div>
 	<div>
@@ -331,6 +344,13 @@ function getProperty(obj, prop)
 </div>
 </section>
 
+<section class="slide" id="presentation-closing">
+  <h2>What was covered</h2>
+  <div>
+    <img src="../images/journey.png" alt="jQuery">
+  </div>
+</section>
+
 <section class="slide" id="end-slide">
 	<div style="text-align: center;"><h2>References</h2></div>
 	<ul>
@@ -344,7 +364,7 @@ function getProperty(obj, prop)
 			<h3>Keith Peters - <a href="http://www.adobe.com/devnet/html5/articles/javascript-object-creation.html">JavaScript Object Creation</a></h3>
 		</li>
 		<li>
-			<h3>Other good sources <a href="http://javascript.info/">http://javascript.info/</a> and <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden/</a></h3>
+			<h3>Other sources <a href="http://javascript.info/">http://javascript.info/</a> and <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden/</a></h3>
 		</li>
 	</ul>
 </section>
