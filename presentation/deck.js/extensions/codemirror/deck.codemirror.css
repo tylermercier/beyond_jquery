@@ -6,7 +6,8 @@
     padding: 10px;
     font-family: monospace; }
   .deck-container .slide .CodeMirror {
-    line-height: 1em;
+    line-height: 1.3em;
+    font-size: 1.3em;
     font-family: monospace;
     overflow: auto;
     height: 100%;

@@ -10,9 +10,11 @@
 .slide h3 {
   font-size: 2.5em;
 }
-p {
+.slide p {
   font-size: 2em;
 }
+
+
 figure {
   margin: 0.5em;
   padding: 0.5em;
