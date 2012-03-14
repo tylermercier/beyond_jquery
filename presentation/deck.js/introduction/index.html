@@ -36,7 +36,7 @@
 <body class="deck-container">
 
 <section class="slide" id="praire-dev-con">
-  <img style="height: 95%;" src="../images/prairie_dev_con.jpg" alt="title">
+  <img style="height: 90%;" src="../images/prairie_dev_con2.jpg" alt="title">
 </section>
 
 <section class="slide" id="title-slide">
@@ -90,7 +90,7 @@ $("#myButton").on("click", function(event){
 	</div>
 	<br/>
 	<div>
-		<button id="myButton">My Button</button>
+		<button style="font-size: 24px;" id="myButton">Show Event</button>
 	</div>
 </section>
 <script type="text/javascript">
@@ -106,18 +106,18 @@ $("#myButton").on("click", function(event){
 	<div id="code" class="code" name="code" mode="javascript" style="display: none;">// Expands a box when clicked
 $("#go").click(function(){
   $("#block").animate({
-    opacity: 0.4,
+    opacity: 0.8,
     marginLeft: "0.6in",
-    fontSize: "3em",
+    fontSize: "5em",
     borderWidth: "10px"
   }, 1500 );
 });</div>
 	</div>
 	<br/>
 	<div>
-		<button id="go">Click</button>
-		<div id="block" style="width: 100%;">Some text.</div>
+		<button style="font-size: 24px;" id="go">Show Animation</button>
 	</div>
+  <div id="block" style="width: 100%; padding-top: 25px;">Watch me change</div>
 </section>
 
 <script type="text/javascript">
@@ -178,15 +178,36 @@ $.ajax({
   <h1>Live Demo</h1>
 </section>
 
-<section class="slide" id="gallery-html-start">
+<section class="slide" id="gallery-html-example">
 	<h2>Photo Gallery</h2>
 	<p>
 	  This is the starting HTML for our gallery
 	</p>
 	<div>
   	<textarea type="text/html" class="code" mode="text/html" style="display: none;"><div id="photos" class="photos">
-</div>
+  <div class="photo">
+    <figure>
+      <img src="{{image.url}}" alt="{{caption}}" />
+      <figcaption>{{caption}}</figcaption>
+      <p>Tags: 
+        {{#each tags}}
+        <a href="#" class="photo-tag">{{this}}</a>
+        {{/each}}
+      </p>
+    </figure>
+  </div>
+  <!-- ... -->
+</div></textarea>
+  </div>
+</section>
 
+<section class="slide" id="gallery-template-example">
+  <h2>Photo Gallery</h2>
+  <p>
+    This is our client side template code
+  </p>
+  <div>
+    <textarea type="text/html" class="code" mode="text/html" style="display: none;"><div id="photos" class="photos"></div>
 
 <script id="photo-template" type="text/x-handlebars-template">
   <div class="photo">
@@ -195,20 +216,36 @@ $.ajax({
       <figcaption>{{caption}}</figcaption>
       <p>Tags: 
       {{#each tags}}
-        <a href="#" data-tag="{{this}}" class="photo-tag">{{this}}</a>
+        <a href="#" class="photo-tag">{{this}}</a>
       {{/each}}
       </p>
     </figure>
   </div>
-</script></textarea>
+</script>
+
+var renderer = Handlebars.compile($("#photo-template").html())</textarea>
   </div>
-  <div style="padding-top: 20px;">
-    <p>
-      This is our client side template code
-    </p>
-  </div>
+</section>
+
+<section class="slide" id="gallery-data">
+  <h2>Photo Gallery</h2>
+  <p>
+    This is the dataset for our gallery
+  </p>
   <div>
-    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">Handlebars.compile($("#photo-template").html())</textarea>
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var photos = [
+  {
+    caption: "Fruit",
+    image: {
+      url: "public/images/collection/001.jpg"
+    },
+    tags: [
+      "food",
+      "fruit",
+      "colorful"
+    ]
+  },
+  // ...</textarea>
   </div>
 </section>
 
@@ -229,9 +266,8 @@ function showPictures() {
   var end = offset + imageLimit;
   end = Math.min(photos.length, end);
 
-  
   for (var i=offset; i<end; i++) {
-    photos_element.append(renderer.render(photos[i]));
+    photos_element.append(renderer(photos[i]));
   };
 
 }
@@ -247,13 +283,13 @@ showPictures();</textarea>
 <section class="slide" id="missing-features">
   <h2>What's missing?</h2>
   <ul>
-    <li class="slide" id="missing-features-extensible">
-      <h3>Extensibility</h3>
-      <p>Low cost of adding features (or removing)</p>
-    </li>
     <li class="slide" id="missing-features-reusability">
       <h3>Reusability</h3>
       <p>Code we can easily share and re-use</p>
+    </li>
+    <li class="slide" id="missing-features-extensible">
+      <h3>Extensibility</h3>
+      <p>Low cost of adding features (or removing)</p>
     </li>
     <li class="slide" id="missing-features-reliability">
       <h3>Reliability</h3>
@@ -270,27 +306,27 @@ showPictures();</textarea>
 </section>
 
 <section class="slide" id="module-pattern-code">
-  <h2>JavaSCript Module Pattern</h2>
+  <h2>JavaScript Module Pattern</h2>
   <div>
-    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">// Example taken from http://www.yuiblog.com/blog/2007/06/12/module-pattern/
+    <textarea type="text/html" class="code" mode="text/javascript" style="display: none;">// Example taken from
+// http://www.yuiblog.com/blog/2007/06/12/module-pattern/
 
-var myModule = (function () {
+var Module = (function () {
 
-  //"private" variables:
-  var myPrivateVar = "I can be accessed only from within myModule.";
+  var privateVariable = "I'm a private variable";
 
-  //"private" method:
-  var myPrivateMethod = function () {
-    YAHOO.log("I can be accessed only from within myModule");
+  var privateFunction = function () {
+    return "this is a private function";
   }
 
   return  {
-    myPublicProperty: "I'm accessible as myModule.myPublicProperty.",
-    myPublicMethod: function () {
+    publicProperty: "I'm a public property",
+    publicFunction: function () {
+      return "this is a public function"
     }
   };
 
-})(); // the parens here cause the anonymous function to execute and return</textarea>
+})(); // causes the anonymous function to execute and return</textarea>
 </div>
 </section>
 
@@ -334,13 +370,47 @@ Gallery.Paginator = (function(){
 <section class="slide" id="javascript-prototypal-chaining">
 	<h2>Prototype Chaining</h2>
 	<div>
-  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var person = { name: "John" } // typeof Object
+  	<textarea type="text/html" class="code" mode="text/javascript" style="display: none;">var person = { firstName: "John" } // typeof Object
 person.lastName;</textarea>
 	</div>
 	<div>
 		<img style="height: 70%;" src="../images/prototype-chain.jpg" alt="prototype-chains">
 	</div>
 </section>
+
+<section class="slide" id="prototype-example">
+  <h2>Prototype Example</h2>
+  <div>
+  <div id="code" class="code" name="code" mode="javascript" style="display: none;">function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+Person.prototype.displayName = function() {
+  return this.firstName + ' ' + this.lastName;";
+}
+
+var person = new Person("John", "Doe");</div>
+  </div>
+  <br/>
+  <div style="font-size: 24px;">
+    <button id="prototype-toString">person.displayName()</button>
+  </div>
+  <div style="padding-top: 15px;font-size: 32px;" id="prototype-display"></div>
+</section>
+<script type="text/javascript">
+  function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  Person.prototype.displayName = function() {
+    return '<br/>' + this.firstName + ' ' + this.lastName;
+  }
+  var person = new Person("John", "Doe");
+  $("#prototype-toString").on("click", function(event){
+    $("#prototype-display").append(person.displayName());
+  });
+</script>
 
 <section class="slide" id="show-code-v3">
   <h1>Code</h1>
